@@ -9,7 +9,7 @@ yargs
     'Run in development environment',
     () => {},
     argv => {
-      require('../lib/dev')(argv);
+      require('../lib/dev');
     }
   )
   .command('build', 'Run in production environment', () => {}, argv => {})
