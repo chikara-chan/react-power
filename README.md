@@ -7,6 +7,10 @@ Front-end development toolkit includes full-fledged configuration and scripts.
 
 Quickly start a web app development with none configuration, or optionally add a minimal config file when needed.
 
+## Usage
+
+Todo.
+
 ## License
 
 Released under the [MIT](https://github.com/chikara-chan/react-power/blob/master/LICENSE) license.
