@@ -1,9 +1,17 @@
-const path = require('path'), fs = require('fs'), webpack = require('webpack');
+const path = require('path')
+const fs = require('fs')
+const webpack = require('webpack');
+const babelConfig = require('./babel.config')
 
 module.exports = function(env) {
   return {
     entry: {
-      bundle: './src/index.js'
+      bundle: [
+        'react-hot-loader/patch',
+        'webpack-dev-server/client',
+        'webpack/hot/only-dev-server',
+        './src/index.js'
+      ]
     },
     output: {
       path: path.resolve('dist'),
@@ -15,7 +23,8 @@ module.exports = function(env) {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: 'babel-loader?cacheDirectory'
+          loader: 'babel-loader',
+          query: babelConfig
         },
         {
           test: /\.(jpg|png|gif|webp)$/,
@@ -24,10 +33,11 @@ module.exports = function(env) {
       ]
     },
     resolve: {
-      modules: ['node_modules'],
+      modules: ['src', 'node_modules'],
       extensions: ['.js', '.json', '.scss']
     },
     plugins: [
+      new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       })
