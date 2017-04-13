@@ -4,24 +4,38 @@
   "description": "Front-end development toolkit",
   "main": "index.js",
   "bin": {
-    "sku": "./bin/index.js"
+    "react-power": "./bin/index.js"
   },
-  "scripts": {
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seek-oss/sku.git"
   },
   "dependencies": {
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.22.0",
+    "babel-loader": "7.0.0-beta.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "^0.11.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "v3.0.0-beta.6",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
-  },
-  "devDependencies": {
+    "webpack-dev-server": "^2.3.0",
     "webpack-merge": "^4.1.0",
     "yargs": "^7.0.2"
-  }
+  },
+  "author": "SEEK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seek-oss/sku/issues"
+  },
+  "homepage": "https://github.com/seek-oss/sku#readme"
 }
