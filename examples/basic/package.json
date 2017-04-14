@@ -1,0 +1,15 @@
+{
+  "name": "experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "react-power dev",
+    "build": "react-power build"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react-power": "^0.0.3"
+  }
+}
