@@ -12,6 +12,12 @@ yargs
       require('../lib/dev');
     }
   )
-  .command('build', 'Run in production environment', () => {}, argv => {})
-  .command('test', 'Run in test environment', () => {}, argv => {})
+  .command(
+    'build',
+    'Run in production environment',
+    () => {},
+    argv => {
+      require('../lib/build');
+    }
+  )
   .help().argv;
