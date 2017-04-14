@@ -7,9 +7,6 @@ module.exports = function(env) {
   return {
     entry: {
       bundle: [
-        'react-hot-loader/patch',
-        'webpack-dev-server/client',
-        'webpack/hot/only-dev-server',
         './src/index.js'
       ]
     },
@@ -19,25 +16,28 @@ module.exports = function(env) {
       publicPath: '/'
     },
     module: {
-      loaders: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
+      rules: [{
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [{
           loader: 'babel-loader',
-          query: babelConfig
-        },
-        {
-          test: /\.(jpg|png|gif|webp)$/,
-          loader: 'url-loader?limit=10000'
-        }
-      ]
+          options: babelConfig
+        }]
+      }, {
+        test: /\.(jpg|png|gif|webp)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }]
+      }]
     },
     resolve: {
-      modules: ['src', 'node_modules'],
-      extensions: ['.js', '.json', '.scss']
+      modules: ['node_modules'],
+      extensions: ['.js', '.json', '.scss', '.less']
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       })
