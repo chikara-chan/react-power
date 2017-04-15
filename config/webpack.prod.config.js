@@ -64,7 +64,7 @@ module.exports = function(env) {
         options: {
           postcss: [
             autoprefixer({
-              browsers: ['> 5%', 'ie > 7']
+              browsers: ['last 2 versions', '> 5%', 'ie > 8']
             })
           ]
         }
