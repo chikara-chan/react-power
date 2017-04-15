@@ -1,19 +1,19 @@
 const path = require('path')
-const fs = require('fs')
 const webpack = require('webpack');
 const babelConfig = require('./babel.config')
+const config = require('../lib/loadConfig')
 
 module.exports = function(env) {
   return {
     entry: {
       bundle: [
-        './src/index.js'
+        config.entry
       ]
     },
     output: {
-      path: path.resolve('dist'),
+      path: path.resolve(config.output),
       filename: '[name].js',
-      publicPath: '/'
+      publicPath: config.publicPath
     },
     module: {
       rules: [{
@@ -35,7 +35,7 @@ module.exports = function(env) {
     },
     resolve: {
       modules: ['node_modules'],
-      extensions: ['.js', '.json', '.scss', '.less']
+      extensions: ['.js', '.json', '.scss', '.less', '.jpg', '.png', '.gif', '.webp']
     },
     plugins: [
       new webpack.DefinePlugin({
