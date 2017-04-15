@@ -1,14 +1,16 @@
 module.exports = {
 	cacheDirectory: true,
 	presets: [
-		['es2015',  {
-			'modules': false
-		}],
-		'stage-0',
+    ['env', {
+      targets: {
+        browsers: ['last 2 versions', '> 5%', 'ie > 8']
+      },
+      modules: false,
+      useBuiltIns: true
+    }],
 		'react'
 	],
 	plugins: [
-	  'transform-runtime',
 	  'react-hot-loader/babel'
 	]
 };
