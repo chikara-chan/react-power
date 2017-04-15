@@ -1,6 +1,7 @@
-const webpack = require('webpack'),
-  merge = require('webpack-merge'),
-  baseConfig = require('./webpack.base.config');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.base.config');
+const config = require('../lib/loadConfig')
 
 module.exports = function(env) {
   const base = baseConfig(env);
@@ -8,7 +9,7 @@ module.exports = function(env) {
   Object.keys(base.entry).forEach(key => {
     base.entry[key] = [
       'react-hot-loader/patch',
-      'webpack-dev-server/client',
+      `webpack-dev-server/client?http://localhost:${config.port}/`,
       'webpack/hot/only-dev-server',
     ].concat(base.entry[key])
   })
