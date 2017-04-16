@@ -11,6 +11,10 @@ Quickly start a web app development with none configuration, or optionally add a
 
 Todo.
 
+## Examples
+
+[basic](https://github.com/chikara-chan/react-power/tree/master/examples/basic)
+
 ## License
 
 Released under the [MIT](https://github.com/chikara-chan/react-power/blob/master/LICENSE) license.
