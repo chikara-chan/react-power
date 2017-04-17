@@ -1,5 +1,5 @@
 module.exports = {
-	entry: './src',
+	input: './src',
 	output: './dist',
 	public: './public',
 	publicPath: '/'
