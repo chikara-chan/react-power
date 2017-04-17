@@ -1,9 +1,10 @@
+.DS_Store
 logs
 *.log
 pids
 *.pid
 *.seed
+*.lock
 coverage
 node_modules
 bower_components
-.DS_Store
