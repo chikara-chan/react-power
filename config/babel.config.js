@@ -1,9 +1,12 @@
-module.exports = {
+const deepAssign = require('deep-assign');
+const config = require('../lib/loadConfig')
+
+module.exports = deepAssign({
 	cacheDirectory: true,
 	presets: [
     ['env', {
       targets: {
-        browsers: ['last 2 versions', '> 5%', 'ie > 8']
+        browsers: config.autoprefixer
       },
       modules: false,
       useBuiltIns: true
@@ -13,4 +16,4 @@ module.exports = {
 	plugins: [
 	  'react-hot-loader/babel'
 	]
-};
+}, config.babelrc)
