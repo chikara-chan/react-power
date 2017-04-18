@@ -1,12 +1,18 @@
 import React from 'react';
 import styles from './App.scss';
 
-function App() {
+class App extends React.Component {
+
+  handleClick() {
+    console.log(this)
+  }
+ render() {
   return (
     <div>
-      <h2>{process.env.NODE_ENV}</h2>
+      <h1 className={styles.title} onClick={this.handleClick}>React Power</h1>
     </div>
    );
-);
+  }
+}
 
 export default App;

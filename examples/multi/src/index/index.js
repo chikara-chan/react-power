@@ -12,7 +12,7 @@ function renderHTML() {
   );
 }
 
-renderHTML();
+render();
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {

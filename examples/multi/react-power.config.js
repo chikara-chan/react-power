@@ -1,4 +1,5 @@
 module.exports = {
 	input: './src',
-	output: './dist'
+	output: './dist',
+  multi: true
 }
