@@ -1,16 +1,13 @@
 {
-  "name": "experiment",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "basic",
+  "version": "0.0.0",
+  "description": "Basic example",
   "scripts": {
     "dev": "react-power dev",
     "build": "react-power build",
     "clean": "react-power clean"
   },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "babel-plugin-react-scope-binding": "^1.1.3"
+    "react-power": "^0.2.0"
   }
 }

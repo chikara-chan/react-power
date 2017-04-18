@@ -1,16 +1,14 @@
 {
-  "name": "experiment",
+  "name": "multi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Multi example",
   "main": "index.js",
   "scripts": {
     "dev": "react-power dev",
     "build": "react-power build",
     "clean": "react-power clean"
   },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "react-power": "^0.0.3"
+    "react-power": "^0.2.0"
   }
 }

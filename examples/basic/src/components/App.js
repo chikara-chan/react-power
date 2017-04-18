@@ -1,15 +1,11 @@
 import React from 'react';
 import styles from './App.scss';
 
-class App extends React.Component {
-
-  handleClick() {
-    console.log(this)
-  }
+function App() {
  render() {
   return (
     <div>
-      <h1 className={styles.title} onClick={this.handleClick}>React Power</h1>
+      <h1 className={styles.title}>React Power</h1>
     </div>
    );
   }
