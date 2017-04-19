@@ -1,6 +1,4 @@
-<p align="center">
-  <h1>React Power</h1>
-</p>
+<h1 align="center">React Power</h1>
 
 <p align="center">
   <a href="https://travis-ci.org/chikara-chan/react-power"><img alt="Travis Status" src="https://img.shields.io/travis/chikara-chan/react-power/master.svg"></a>
