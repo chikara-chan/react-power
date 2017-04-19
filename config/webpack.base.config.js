@@ -22,11 +22,24 @@ function injectEntry() {
     entry.bundle = config.input
   }
 
+  if (config.vendor.length) {
+    entry.vendor = config.vendor
+  }
+
   return entry
 }
 
 function injectPlugins() {
   const plugins = [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module) {
+        return module.context && module.context.indexOf('node_modules') !== -1;
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest'
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
@@ -45,7 +58,10 @@ function injectPlugins() {
             new HtmlWebpackPlugin({
               filename: `${filename}.html`,
               template: path.resolve(config.input, filename, 'template.html'),
-              chunks: [`${filename}/bundle`]
+              chunks: [`${filename}/bundle`],
+              minify: {
+                collapseWhitespace: true
+              }
             })
           )
         }
@@ -60,7 +76,10 @@ function injectPlugins() {
       plugins.push(
         new HtmlWebpackPlugin({
           filename: 'index.html',
-          template: templatePath
+          template: templatePath,
+          minify: {
+            collapseWhitespace: true
+          }
         })
       )
     } catch (e) {}
@@ -71,11 +90,6 @@ function injectPlugins() {
 
 module.exports = {
   entry: injectEntry(),
-  output: {
-    path: path.resolve(config.output),
-    filename: '[name].js',
-    publicPath: '/'
-  },
   module: {
     rules: [{
       test: /\.jsx?$/,
@@ -95,8 +109,9 @@ module.exports = {
     }]
   },
   resolve: {
-    modules: ['node_modules'],
+    modules: [config.input, 'node_modules'],
     extensions: ['.js', '.json', '.scss', '.less', '.jpg', '.png', '.gif', '.webp']
   },
+  externals: config.externals,
   plugins: injectPlugins()
 };

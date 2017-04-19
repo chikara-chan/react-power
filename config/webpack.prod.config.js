@@ -1,3 +1,4 @@
+const path = require('path')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -6,6 +7,12 @@ const base = require('./webpack.base.config');
 const config = require('../lib/loadConfig')
 
 module.exports = merge(base, {
+  output: {
+    path: path.resolve(config.output),
+    filename: `[name]${config.hash?'.[chunkhash:8]':''}.js`,
+    chunkFilename: `chunk.[name]${config.hash?'.[chunkhash:8]':''}.js`,
+    publicPath: config.publicPath
+  },
   module: {
     rules: [{
       test: /\.scss$/,
@@ -62,13 +69,13 @@ module.exports = merge(base, {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
-        postcss: [
-          autoprefixer({
-            browsers: config.autoprefixer
-          })
-        ]
+        postcss: [autoprefixer({
+          browsers: config.autoprefixer
+        })]
       }
     }),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin({
+      filename: `[name]${config.hash?'.[contenthash:8]':''}.css`
+    })
   ]
 });

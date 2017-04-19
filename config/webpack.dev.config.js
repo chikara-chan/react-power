@@ -1,3 +1,5 @@
+const url = require('url');
+const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack.base.config');
@@ -5,11 +7,13 @@ const config = require('../lib/loadConfig')
 
 function composeHotSuite(base) {
   Object.keys(base.entry).forEach(key => {
-    base.entry[key] = [
-      'react-hot-loader/patch',
-      `webpack-dev-server/client?http://localhost:${config.port}/`,
-      'webpack/hot/only-dev-server',
-    ].concat(base.entry[key])
+    if (key !== 'vendor') {
+      base.entry[key] = [
+        'react-hot-loader/patch',
+        `webpack-dev-server/client`,
+        'webpack/hot/only-dev-server',
+      ].concat(base.entry[key])
+    }
   })
 
   base.plugins.push(new webpack.HotModuleReplacementPlugin())
@@ -21,6 +25,12 @@ if (config.hot) {
 
 module.exports = merge(base, {
   devtool: 'source-map',
+  output: {
+    path: path.resolve(config.output),
+    filename: '[name].js',
+    chunkFilename: 'chunk.[name].js',
+    publicPath: url.parse(config.publicPath).path
+  },
   module: {
     rules: [{
       test: /\.scss$/,
