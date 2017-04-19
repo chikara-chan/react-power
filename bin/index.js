@@ -21,6 +21,7 @@ yargs
     }),
     argv => {
       process._argv = argv
+      require('../lib/clean');
       require('../lib/build');
     }
   )
@@ -32,7 +33,9 @@ yargs
       require('../lib/clean');
     }
   )
-  .command('*', 'the default command.',
+  .command(
+    '*',
+    'The default command.',
     () => {},
     argv => {
     console.log('Command not found. Run `react-power --help` for usage.')
