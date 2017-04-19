@@ -7,7 +7,8 @@
     "build": "react-power build",
     "clean": "react-power clean"
   },
-  "dependencies": {
+  "devDependencies": {
     "react-power": "^0.2.0"
-  }
+  },
+  "private": true
 }
