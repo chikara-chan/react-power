@@ -6,7 +6,7 @@
   <a href="https://github.com/chikara-chan/react-power/blob/master/LICENSE"><img alt="LICENSE" src="https://img.shields.io/npm/l/react-power.svg"></a>
 </p>
 
-# Introduction
+## Introduction
 
 Front-end development toolkit includes full-featured scripts powered by React ecosystem.
 
@@ -18,44 +18,45 @@ Require Node.js v7.6 or later. (for async/await supporting)
 
 ## Getting Started
 
-Create new work directory.
+Creates new work directory.
 ``` bash
 $ mkdir my-app
 $ cd my-app
 ```
-Intall react-power.
+Intalls react-power with npm or yarn.
 ``` bash
+$ npm init
 $ yarn add --dev react-power
 ```
-Add scripts to package.json.
+Adds scripts to package.json.
 ``` js
 "scripts": {
   "dev": "react-power dev",
   "build": "react-power build",
-  "clean": "react-power clean",
+  "clean": "react-power clean"
 }
 ```
-Write some source code.
+Writes some source code.
 ``` bash
 $ mkdir src
 $ echo 'document.getElementById("app").innerHTML = "Hello world!"' > src/index.js
-$ echo
-  '<!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8">
-      <title>React Power</title>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <meta name="renderer" content="webkit">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-      <div id="root"></div>
-    </body>
-  </html>'
-  > src/template.html
+$ echo \
+'<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React Power</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>' \
+> src/template.html
 ```
-Try using script `dev`, `build`, `clean`.
+Tries running script `dev`, `build`, `clean`.
 ``` bash
 $ yarn run dev
 $ yarn run build
@@ -63,7 +64,7 @@ $ yarn run clean
 ```
 ## Configuration
 
-Writes a `react-power.config.js` in root directory. In it, you'll configure like this:
+Create a file `react-power.config.js` in root directory. In it, you'll configure like this:
 
 ``` js
 module.exports = {
@@ -86,7 +87,7 @@ module.exports = {
 }
 ```
 
-# Options Reference
+## Options Reference
 
 Option | Type | Default | Description
 --- | --- | --- | ---
