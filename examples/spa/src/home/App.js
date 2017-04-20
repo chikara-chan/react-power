@@ -1,12 +1,12 @@
-import React from 'react';
-import styles from './App.scss';
+import React from 'react'
+import styles from './App.scss'
 
 function App() {
   return (
     <div>
       <h1 className={styles.title}>Home</h1>
     </div>
-   );
+  )
 }
 
-export default App;
+export default App

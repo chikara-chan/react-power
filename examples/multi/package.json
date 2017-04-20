@@ -7,7 +7,14 @@
     "build": "react-power build",
     "clean": "react-power clean"
   },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-loadable": "^3.3.1",
+    "react-router-dom": "^4.1.1"
+  },
   "devDependencies": {
+    "react-hot-loader": "next",
     "react-power": "^0.2.0"
   },
   "private": true

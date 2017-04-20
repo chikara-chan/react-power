@@ -8,25 +8,28 @@ function Router() {
     <HashRouter>
       <Layout>
         <Switch>
-          <Route exact path='/' render={() => <Redirect to='home' />} />
-          <Route path='/home' component={
-            loadable({
+          <Route exact path="/" render={() => <Redirect to="home" />} />
+          <Route
+            path="/home"
+            component={loadable({
               loader: () => System.import('./home/App'),
               LoadingComponent: () => null
-            })
-          } />
-          <Route path='/explore' component={
-            loadable({
+            })}
+          />
+          <Route
+            path="/explore"
+            component={loadable({
               loader: () => System.import('./explore/App'),
               LoadingComponent: () => null
-            })
-          } />
-          <Route path='/about' component={
-            loadable({
+            })}
+          />
+          <Route
+            path="/about"
+            component={loadable({
               loader: () => System.import('./about/App'),
               LoadingComponent: () => null
-            })
-          } />
+            })}
+          />
         </Switch>
       </Layout>
     </HashRouter>

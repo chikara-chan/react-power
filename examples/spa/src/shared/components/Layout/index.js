@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './index.scss';
+import styles from './index.scss'
 
 function Layout(props) {
   return (
@@ -12,7 +12,7 @@ function Layout(props) {
       </ul>
       {props.children}
     </div>
-   );
+  )
 }
 
-export default Layout;
+export default Layout

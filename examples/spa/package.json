@@ -1,7 +1,7 @@
 {
   "name": "multi",
   "version": "0.0.0",
-  "description": "Spa example",
+  "description": "SPA example",
   "scripts": {
     "dev": "react-power dev",
     "build": "react-power build",
