@@ -4,7 +4,7 @@ import styles from './App.scss'
 function App() {
   return (
     <div>
-      <h1 className={styles.title}>login</h1>
+      <h1 className={styles.title}>Login</h1>
     </div>
   )
 }
