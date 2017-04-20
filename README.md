@@ -8,7 +8,7 @@
 
 ## Introduction
 
-Front-end development toolkit includes full-featured scripts powered by React ecosystem.
+Command line toolkit includes full-featured scripts powered by React ecosystem.
 
 Quickly start a web app development with none configuration, or optionally add a minimal config file when needed.
 
