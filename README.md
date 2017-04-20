@@ -39,7 +39,7 @@ Adds scripts to package.json.
 Writes some source code.
 ``` bash
 $ mkdir src
-$ echo 'document.getElementById("app").innerHTML = "Hello world!"' > src/index.js
+$ echo 'document.getElementById("root").innerHTML = "Hello world!"' > src/index.js
 $ echo \
 '<!DOCTYPE html>
 <html>
