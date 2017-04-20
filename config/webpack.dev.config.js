@@ -1,8 +1,8 @@
-const url = require('url');
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const base = require('./webpack.base.config');
+const url = require('url')
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const base = require('./webpack.base.config')
 const config = require('../lib/loadConfig')
 
 function composeHotSuite(base) {
@@ -11,7 +11,7 @@ function composeHotSuite(base) {
       base.entry[key] = [
         'react-hot-loader/patch',
         `webpack-dev-server/client`,
-        'webpack/hot/only-dev-server',
+        'webpack/hot/only-dev-server'
       ].concat(base.entry[key])
     }
   })
@@ -32,43 +32,78 @@ module.exports = merge(base, {
     publicPath: url.parse(config.publicPath).path
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          camelCase: true,
-          importLoaders: 1,
-          localIdentName: '[name]__[local]__[hash:base64:8]'
-        }
-      }, {
-        loader: 'sass-loader'
-      }]
-    }, {
-      test: /\.less$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          camelCase: true,
-          importLoaders: 1,
-          localIdentName: '[name]__[local]__[hash:base64:8]'
-        }
-      }, {
-        loader: 'less-loader'
-      }]
-    }, {
-      test: /\.css$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader'
-      }]
-    }]
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: config.cssModules,
+              camelCase: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]__[hash:base64:8]'
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: config.cssModules,
+              camelCase: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]__[hash:base64:8]'
+            }
+          },
+          {
+            loader: 'less-loader'
+          }
+        ]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: config.cssModules,
+              camelCase: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]__[hash:base64:8]'
+            }
+          },
+          {
+            loader: 'stylus-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
+      }
+    ]
   }
-});
+})
