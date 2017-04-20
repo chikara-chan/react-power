@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const yargs = require('yargs');
+const yargs = require('yargs')
 
 yargs
   .usage('react-power <cmd> [args]')
@@ -9,20 +9,21 @@ yargs
     'Run in development environment.',
     () => {},
     argv => {
-      require('../lib/dev');
+      require('../lib/dev')
     }
   )
   .command(
     'build',
     'Run in production environment.',
-    yargs => yargs.option('watch', {
-      alias: 'w',
-      default: false
-    }),
+    yargs =>
+      yargs.option('watch', {
+        alias: 'w',
+        default: false
+      }),
     argv => {
       process._argv = argv
-      require('../lib/clean');
-      require('../lib/build');
+      require('../lib/clean')
+      require('../lib/build')
     }
   )
   .command(
@@ -30,7 +31,7 @@ yargs
     'Clean the work directory.',
     () => {},
     argv => {
-      require('../lib/clean');
+      require('../lib/clean')
     }
   )
   .command(
@@ -38,6 +39,7 @@ yargs
     'The default command.',
     () => {},
     argv => {
-    console.log('Command not found. Run `react-power --help` for usage.')
-  })
-  .help().argv;
+      console.log('Command not found. Run `react-power --help` for usage.')
+    }
+  )
+  .help().argv
