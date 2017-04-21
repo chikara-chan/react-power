@@ -112,6 +112,7 @@ open | Boolean | false | Whether open the browser immediately when bundles are f
 
 **babelrc**
 - `babel-preset-env`
+- `babel-preset-stage-0`
 - `babel-preset-react`
 - `react-hot-loader/babel`
 
