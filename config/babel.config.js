@@ -1,21 +1,30 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-var twoSum = function(nums, target) {
-  var map = {}
+const config = require('../lib/loadConfig')
 
-  for (var i = 0; i < nums.length; i++) {
-    if (nums[i] > target) {
-      continue
-    }
-
-    if (map[target - nums[i]] != undefined) {
-      return [map[target - nums[i]], i]
-    }
-    map[nums[i]] = i
-  }
+const babelrc = {
+  cacheDirectory: true,
+  presets: [
+    [
+      'env',
+      {
+        targets: {
+          browsers: config.browserslist
+        },
+        modules: false,
+        useBuiltIns: true
+      }
+    ],
+    'stage-0',
+    'react'
+  ],
+  plugins: ['react-hot-loader/babel']
 }
 
-console.log(twoSum([0, 4, 3, 0], 0))
+if (config.babelrc.presets) {
+  babelrc.presets = babelrc.presets.concat(config.babelrc.presets)
+}
+
+if (config.babelrc.plugins) {
+  babelrc.plugins = babelrc.plugins.concat(config.babelrc.plugins)
+}
+
+module.exports = babelrc
