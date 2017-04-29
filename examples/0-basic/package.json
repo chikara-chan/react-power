@@ -1,0 +1,19 @@
+{
+  "name": "basic",
+  "version": "0.0.0",
+  "description": "Basic example",
+  "scripts": {
+    "dev": "react-power dev",
+    "build": "react-power build",
+    "clean": "react-power clean"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "react-hot-loader": "v3.0.0-beta.6",
+    "react-power": "^1.0.0"
+  },
+  "private": true
+}
