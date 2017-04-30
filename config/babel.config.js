@@ -9,14 +9,13 @@ const babelrc = {
         targets: {
           browsers: config.browserslist
         },
-        modules: false,
-        useBuiltIns: true
+        modules: false
       }
     ],
     'stage-0',
     'react'
   ],
-  plugins: ['react-hot-loader/babel']
+  plugins: ['react-hot-loader/babel', 'transform-runtime']
 }
 
 if (config.babelrc.presets) {
