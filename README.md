@@ -115,13 +115,13 @@ open | Boolean | false | Whether open the browser immediately when bundles are f
 - `babel-preset-stage-0`
 - `babel-preset-react`
 - `react-hot-loader/babel`
+- `babel-plugin-transform-runtime`
 
 **rules**
 - `babel-loader`
 - `json-loader`
 - `sass-loader`
 - `less-loader`
-- `stylus-loader`
 - `url-loader`
 
 ## Examples
@@ -130,6 +130,7 @@ See more examples for usage detail.
 - [basic](https://github.com/chikara-chan/react-power/tree/master/examples/basic)
 - [multi](https://github.com/chikara-chan/react-power/tree/master/examples/multi)
 - [spa](https://github.com/chikara-chan/react-power/tree/master/examples/spa)
+- [complex](https://github.com/chikara-chan/react-power/tree/master/examples/complex)
 
 ## License
 
