@@ -10,7 +10,7 @@ function composeHotSuite(base) {
     if (key !== 'vendor') {
       base.entry[key] = [
         'react-hot-loader/patch',
-        `webpack-dev-server/client`,
+        `webpack-dev-server/client?http://${config.host}:${config.port}`,
         'webpack/hot/only-dev-server'
       ].concat(base.entry[key])
     }
