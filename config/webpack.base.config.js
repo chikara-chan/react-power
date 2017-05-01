@@ -63,7 +63,9 @@ function injectPlugins() {
             new HtmlWebpackPlugin({
               filename: `${filename}.html`,
               template: path.resolve(config.input, filename, 'template.html'),
-              chunks: [`${filename}/bundle`]
+              chunks: config.vendor.length
+                ? [`${filename}/bundle`, 'vendor', 'manifest']
+                : [`${filename}/bundle`]
             })
           )
         }
