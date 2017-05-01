@@ -127,10 +127,10 @@ open | Boolean | false | Whether open the browser immediately when bundles are f
 ## Examples
 
 See more examples for usage detail.
-- [basic](https://github.com/chikara-chan/react-power/tree/master/examples/basic)
-- [multi](https://github.com/chikara-chan/react-power/tree/master/examples/multi)
-- [spa](https://github.com/chikara-chan/react-power/tree/master/examples/spa)
-- [complex](https://github.com/chikara-chan/react-power/tree/master/examples/complex)
+- [basic](https://github.com/chikara-chan/react-power/tree/master/examples/0-basic)
+- [multi](https://github.com/chikara-chan/react-power/tree/master/examples/1-multi)
+- [spa](https://github.com/chikara-chan/react-power/tree/master/examples/2-spa)
+- [complex](https://github.com/chikara-chan/react-power/tree/master/examples/3-complex)
 
 ## License
 
