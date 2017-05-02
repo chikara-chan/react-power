@@ -25,7 +25,7 @@ $ cd my-app
 ```
 Intalls react-power with npm or yarn.
 ``` bash
-$ npm init
+$ yarn init
 $ yarn add --dev react-power
 ```
 Adds scripts to package.json.
