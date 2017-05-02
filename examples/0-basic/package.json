@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "react-power dev",
     "build": "react-power build",
+    "build:watch": "react-power build --watch",
     "clean": "react-power clean"
   },
   "dependencies": {
