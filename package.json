@@ -56,16 +56,16 @@
     "webpack-merge": "^4.1.0",
     "yargs": "^7.0.2"
   },
+  "devDependencies": {
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.0",
+    "prettier": "^1.1.0"
+  },
   "author": "Chikara Chan",
   "homepage": "https://github.com/chikara-chan/react-power",
   "repository": {
     "type": "git",
     "url": "https://github.com/chikara-chan/react-power.git"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "husky": "^0.13.3",
-    "lint-staged": "^3.4.0",
-    "prettier": "^1.1.0"
-  }
+  "license": "MIT"
 }
