@@ -1,6 +1,6 @@
 {
   "name": "react-power",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command line toolkit includes full-featured scripts powered by React ecosystem.",
   "keywords": [
     "cli",
