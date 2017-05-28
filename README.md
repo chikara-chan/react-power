@@ -14,11 +14,11 @@ Quickly start a web app development with none configuration, or optionally add a
 
 ## Prerequisite
 
-Require Node.js v7.6 or later. (for async/await supporting)
+Requires Node.js v7.6 or later. (for async/await supporting)
 
 ## Getting Started
 
-Creates new work directory.
+Creates a new work directory.
 ``` bash
 $ mkdir my-app
 $ cd my-app
